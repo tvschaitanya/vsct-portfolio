@@ -4,8 +4,8 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 export default function ImageComparer({ 
   beforeImage, 
   afterImage, 
-  beforeAlt, 
-  afterAlt,
+  beforeAlt = "Before image", // Add default value to make it optional
+  afterAlt = "After image",   // Add default value to make it optional
   beforeLabel = "Before",
   afterLabel = "After" 
 }) {
