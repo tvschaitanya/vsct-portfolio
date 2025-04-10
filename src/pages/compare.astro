@@ -1,0 +1,18 @@
+---
+import MainLayout from "../layouts/main.astro";
+import ImageComparer from "../components/ui/ImageComparer";
+---
+
+<MainLayout title="Image Comparison">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Image Comparison</h1>
+
+    <ImageComparer
+      beforeImage="/assets/images/about.jpg"
+      afterImage="/assets/images/cover.png"
+      beforeAlt="Original design"
+      afterAlt="New design"
+      client:load
+    />
+  </div>
+</MainLayout>
