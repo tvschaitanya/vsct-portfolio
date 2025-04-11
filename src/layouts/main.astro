@@ -2,6 +2,7 @@
 import Footer from "../components/ui/footer.astro";
 import Header from "../components/ui/header.astro";
 import SquareLines from "../components/ui/square-lines.astro";
+import ProjectModal from "../components/ui/ProjectModal";
 const { title } = Astro.props;
 ---
 
@@ -38,6 +39,8 @@ const { title } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    <!-- Add the modal component -->
+    <ProjectModal client:load />
     <script src="../assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>

@@ -4,9 +4,30 @@ import MainLayout from "../../layouts/main.astro";
 ---
 
 <MainLayout title="TempMail.Best Project">
-  <div class="container mx-auto p-6">
-    <h1>TempMail.Best</h1>
-    <p>Detailed project description goes here...</p>
-    <!-- Add more project-specific content -->
+  <div class="container mx-auto p-6 project-content">
+    <h1 class="text-3xl font-bold mb-6">TempMail.Best</h1>
+
+    <p class="mb-4">
+      TempMail.Best is a minimalist temporary email service that provides users
+      with disposable email addresses for one hour. The service is designed to
+      be privacy-friendly, ad-free, and runs completely on Cloudflare
+      infrastructure.
+    </p>
+
+    <h2 class="text-2xl font-bold mb-4 mt-8">Key Features</h2>
+    <ul class="list-disc pl-5 mb-6 space-y-2">
+      <li>Privacy-friendly design with no tracking</li>
+      <li>Valid email addresses for 1 hour</li>
+      <li>Ad-free experience</li>
+      <li>100% powered by Cloudflare</li>
+      <li>Simple, minimalist interface</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mb-4 mt-8">Technologies Used</h2>
+    <ul class="list-disc pl-5 mb-6 space-y-2">
+      <li>Cloudflare Workers</li>
+      <li>Cloudflare Email Routing</li>
+      <li>Modern JavaScript</li>
+    </ul>
   </div>
 </MainLayout>

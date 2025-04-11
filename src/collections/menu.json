@@ -10,5 +10,9 @@
 	{
 	  "name": "Projects",
 	  "url": "#projects"
-	}
+	},
+	{
+		"name": "Contact Me",
+		"url": "#contact"
+	  }
   ]

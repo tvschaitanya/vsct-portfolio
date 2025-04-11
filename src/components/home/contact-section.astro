@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeading from "../ui/page-heading.astro"; // Reusing PageHeading component for consistency
+---
+
+<section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+  <!-- Page Heading for Contact -->
+  <PageHeading
+    title='Contact <span class="text-blue-500">Me</span>'
+    description="Feel free to get in touch with me through any of the platforms below. I'm always happy to connect!"
+  />
+
+  <!-- Contact Buttons -->
+  <div class="z-50 flex justify-center space-x-5 mt-8">
+    <!-- Email Button -->
+    <a
+      href="mailto:tvschaitanya@outlook.com"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-neutral-700 hover:scale-105 hover:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-900 width-fit"
+    >
+      <Icon name="mdi:email" class="w-6 h-6" /> Email
+    </a>
+
+    <!-- LinkedIn Button -->
+    <a
+      href="https://www.linkedin.com/in/tvschaitanya/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-blue-500 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 width-fit"
+    >
+      <Icon name="mdi:linkedin" class="w-6 h-6" /> LinkedIn
+    </a>
+
+    <!-- GitHub Button -->
+    <a
+      href="https://github.com/tvschaitanya"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-gray-600 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-900 width-fit"
+    >
+      <Icon name="mdi:github" class="w-6 h-6" /> GitHub
+    </a>
+
+    <!-- Hashnode Button with Animation and Hover Effects -->
+    <a
+      href="https://tvschaitanya.hashnode.dev/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-[#2962FF] text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-[#1e4ab0] hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1e4ab0] width-fit"
+    >
+      <Icon name="simple-icons:hashnode" class="w-6 h-6" /> Hashnode
+    </a>
+  </div>
+</section>
+
+<style scoped>
+  /* Adding consistent padding to all links */
+  button,
+  a {
+    margin-right: -4px; /* Adjust as needed for spacing between icons and text inside the link/button if necessary. This helps in aligning them perfectly across different buttons with varying lengths of content.*/
+  }
+</style>
