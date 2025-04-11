@@ -2,11 +2,14 @@
 const { logo, dates, role, company, description } = Astro.props;
 ---
 
-<div class="relative flex flex-col justify-start pl-12">
+{/* Adjusted left padding to pl-14 */}
+<div class="relative flex flex-col justify-start pl-14">
+  {/* Intermediate circle size: w-16 h-16 */}
   <div
-    class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700"
+    class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-20 h-20 border-neutral-300 dark:border-neutral-700"
   >
-    <img src={logo} alt={company} class="w-8 h-8" />
+    {/* Image size kept at w-12 h-12 */}
+    <img src={logo} alt={company} class="w-12 h-12" />
   </div>
 
   <p
