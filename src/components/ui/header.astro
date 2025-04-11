@@ -1,29 +1,23 @@
 ---
 import menus from "../../collections/menu.json";
-import Logo from "./logo.astro";
+import Logo from "../ui/logo.astro";
 ---
 
-<!-- Invisible div to compensate for the fixed menu height -->
+<!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
 <div class="relative w-full h-20 opacity-0 pointer-events-none"></div>
-
 <header id="header" class="absolute top-0 z-50 w-full h-20">
   <div
-    class="flex items-center justify-between h-full max-w-5xl pl-6 pr-4 mx-auto border-b border-transparent select-none lg:border-l lg:border-r lg:rounded-b-xl"
+    class="flex items-center justify-between h-full max-w-5xl pl-6 pr-4 mx-auto border-b border-l-0 border-r-0 border-transparent select-none lg:border-r lg:border-l lg:rounded-b-xl"
   >
     <Logo />
-    <!-- Mobile menu background overlay -->
     <div
       id="mobileMenuBackground"
-      onclick="closeMobileMenu()"
-      class="fixed inset-0 z-20 hidden w-screen h-screen bg-white/90 dark:bg-neutral-950/90 duration-300 ease-out"
+      class="fixed inset-0 z-20 hidden w-screen h-screen duration-300 ease-out bg-white/90 dark:bg-neutral-950/90"
     >
     </div>
-
-    <!-- Navigation bar -->
     <nav
       class="relative z-30 flex flex-row-reverse justify-start w-full text-sm sm:justify-end text-neutral-500 dark:text-neutral-400 sm:flex-row"
     >
-      <!-- Mobile menu icon (hamburger) -->
       <div
         id="openMenu"
         class="flex flex-col items-end justify-center w-6 h-6 ml-4 cursor-pointer sm:hidden"
@@ -35,13 +29,9 @@ import Logo from "./logo.astro";
           stroke-linejoin="round"
           stroke-width="2"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke="currentColor"><path d="M4 8h16M4 16h16"></path></svg
         >
-          <path d="M4 8h16M4 16h16"></path>
-        </svg>
       </div>
-
-      <!-- Mobile close menu icon -->
       <div
         id="closeMenu"
         class="flex flex-col items-end justify-center hidden w-6 h-6 ml-4 -translate-x-1 cursor-pointer sm:hidden"
@@ -53,16 +43,12 @@ import Logo from "./logo.astro";
           stroke-linejoin="round"
           stroke-width="2"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg
         >
-          <path d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
       </div>
-
-      <!-- Menu items -->
       <div
         id="menu"
-        class="fixed top-[75px] sm:top-0 w-full sm:w-auto sm:h-auto left-0 z-40 flex-col items-end justify-start hidden sm:relative sm:flex-row sm:flex sm:text-sm sm:pt-0 sm:pr-0"
+        class="fixed top-[75px] ease-out duration-300 sm:top-0 w-full left-0 sm:py-0 pt-7 pb-4 dm:mx-0 left-0 z-40 flex-col items-end justify-start hidden w-full h-auto text-sm sm:text-base sm:h-auto sm:relative sm:flex-row sm:flex sm:text-sm sm:w-auto sm:pr-0 sm:pt-0"
       >
         <div
           class="absolute inset-0 top-0 right-0 block w-full h-full px-3 sm:hidden"
@@ -72,15 +58,13 @@ import Logo from "./logo.astro";
           >
           </div>
         </div>
-
-        <!-- Menu Links dynamically generated from menus.json -->
         {
           menus.map((menu) => {
-            const lowercaseName = menu.name.toLowerCase();
             return (
               <a
-                href={`#${lowercaseName}`}
-                class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
+                href={menu.url}
+                data-section={menu.url.replace("#", "")}
+                class="nav-link relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
               >
                 {menu.name}
               </a>
@@ -88,18 +72,15 @@ import Logo from "./logo.astro";
           })
         }
       </div>
-
-      <!-- Dark/Light mode toggle -->
       <div
         id="darkToggle"
         class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white"
       >
         <div
-          class="absolute left-0 flex items-center justify-center w-6 h-6 overflow-hidden border-b border-transparent group-hover:border-neutral-600"
+          class="absolute left-0 flex items-center justify-center w-6 h-6 overflow-hidden border-b border-transparent horizon group-hover:border-neutral-600"
         >
-          <!-- Sun icon (day mode) -->
           <svg
-            class="absolute w-6 h-6 transition duration-700 ease transform"
+            class="absolute w-6 h-6 transition duration-700 transform ease"
             id="sun"
             fill="none"
             stroke-linecap="round"
@@ -107,15 +88,12 @@ import Logo from "./logo.astro";
             stroke-width="2"
             viewBox="0 0 24 24"
             stroke="currentColor"
-          >
-            <path
+            ><path
               d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            ></path>
-          </svg>
-
-          <!-- Moon icon (night mode) -->
+            ></path></svg
+          >
           <svg
-            class="absolute hidden w-6 h-6 transition duration-700 ease transform"
+            class="absolute hidden w-6 h-6 transition duration-700 transform ease"
             id="moon"
             fill="none"
             stroke-linecap="round"
@@ -123,13 +101,11 @@ import Logo from "./logo.astro";
             stroke-width="2"
             viewBox="0 0 24 24"
             stroke="currentColor"
-          >
-            <path
+            ><path
               d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-            ></path>
-          </svg>
+            ></path></svg
+          >
         </div>
-
         <span class="hidden sm:inline-block">
           <span id="dayText" class="ml-2">Day mode</span>
           <span id="nightText" class="hidden ml-2">Night mode</span>
@@ -139,54 +115,59 @@ import Logo from "./logo.astro";
   </div>
 </header>
 
-<script is:inline>
+<script>
+  // Handle navigation and smooth scrolling
   document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
+    const navLinks = document.querySelectorAll(".nav-link");
+    const isHomePage =
+      window.location.pathname === "/" ||
+      window.location.pathname === "/index.html";
 
-        const targetId = this.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const href = link.getAttribute("href");
+        const sectionId = link.getAttribute("data-section");
 
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-          });
-
-          // Close mobile menu if open
-          const menu = document.getElementById("menu");
-          const mobileBackground = document.getElementById(
-            "mobileMenuBackground"
-          );
-          if (menu && mobileBackground) {
-            menu.classList.add("hidden");
-            mobileBackground.classList.add("hidden");
+        // If we're on a project page and link points to a section
+        if (!isHomePage && href.startsWith("#")) {
+          e.preventDefault();
+          window.location.href = "/" + href;
+        }
+        // If we're on the home page and it's an anchor link
+        else if (isHomePage && href.startsWith("#")) {
+          e.preventDefault();
+          const targetElement = document.getElementById(sectionId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
           }
         }
       });
     });
 
-    // Mobile menu toggle
-    const openMenu = document.getElementById("openMenu");
-    const closeMenu = document.getElementById("closeMenu");
-    const menu = document.getElementById("menu");
-    const mobileBackground = document.getElementById("mobileMenuBackground");
+    // Mobile menu functions
+    const openMenuBtn = document.getElementById("openMenu");
+    const closeMenuBtn = document.getElementById("closeMenu");
+    const mobileMenuBg = document.getElementById("mobileMenuBackground");
+    const menuElement = document.getElementById("menu");
 
-    if (openMenu && closeMenu && menu && mobileBackground) {
-      openMenu.addEventListener("click", () => {
-        menu.classList.remove("hidden");
-        mobileBackground.classList.remove("hidden");
-        openMenu.classList.add("hidden");
-        closeMenu.classList.remove("hidden");
-      });
-
-      closeMenu.addEventListener("click", () => {
-        menu.classList.add("hidden");
-        mobileBackground.classList.add("hidden");
-        openMenu.classList.remove("hidden");
-        closeMenu.classList.add("hidden");
-      });
+    function openMobileMenu() {
+      mobileMenuBg.classList.remove("hidden");
+      menuElement.classList.remove("hidden");
+      openMenuBtn.classList.add("hidden");
+      closeMenuBtn.classList.remove("hidden");
     }
+
+    function closeMobileMenu() {
+      mobileMenuBg.classList.add("hidden");
+      menuElement.classList.add("hidden");
+      openMenuBtn.classList.remove("hidden");
+      closeMenuBtn.classList.add("hidden");
+    }
+
+    openMenuBtn.addEventListener("click", openMobileMenu);
+    closeMenuBtn.addEventListener("click", closeMobileMenu);
+    mobileMenuBg.addEventListener("click", closeMobileMenu);
   });
 </script>
