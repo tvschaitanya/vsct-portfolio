@@ -1,0 +1,108 @@
+---
+// pages/projects/kdm.astro
+import MainLayout from "../../layouts/main.astro";
+import ImageComparer from "../../components/ui/ImageComparer";
+---
+
+<MainLayout title="KDM Construction Project">
+  <div class="container mx-auto p-6 project-content">
+    <h1 class="text-3xl font-bold mb-6">KDM Construction</h1>
+
+    <p class="mb-4">
+      KDM Construction is a mid-sized construction and infrastructure company
+      based in Hyderabad, India. They specialize in government and large-scale
+      projects, providing quality construction services across the region.
+    </p>
+
+    <h2 class="text-2xl font-bold mb-4 mt-8">The Project: Website Redesign</h2>
+
+    <div class="mb-8">
+      <p class="mb-4">
+        We helped KDM Construction transform their legacy website into a modern,
+        user-centric design that better represents their capabilities and
+        services.
+      </p>
+
+      <h3 class="text-xl font-bold mb-2">Before & After Transformation</h3>
+
+      <!-- Image Comparer with fit-to-container settings -->
+      <div
+        class="max-w-5xl mx-auto mb-8 rounded-lg border border-gray-200 shadow-md bg-gray-900"
+      >
+        <div
+          class="bg-blue-600 text-white p-3 flex items-center justify-between"
+        >
+          <span class="font-medium">Website Redesign Comparison</span>
+          <span class="bg-white/20 text-white text-xs px-2 py-1 rounded"
+            >← Drag the slider to compare →</span
+          >
+        </div>
+
+        <div class="relative w-full" style="height: 520px;">
+          <ImageComparer
+            beforeImage="/assets/images/projects/kdm-before.jpeg"
+            afterImage="/assets/images/projects/kdm-after.png"
+            beforeAlt="Original KDM website"
+            afterAlt="Redesigned KDM website"
+            beforeLabel="Before"
+            afterLabel="Re-Designed"
+            objectFit="scale-down"
+            client:only="react"
+          />
+        </div>
+
+        <div class="bg-gray-800 text-white p-2 text-center text-sm">
+          <p>
+            View the complete transformation from our old design to the new
+            modern interface
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4 mt-8">The Problem</h2>
+    <ul class="list-disc pl-5 mb-6 space-y-2">
+      <li>Legacy website built with basic HTML, CSS, and JS</li>
+      <li>Outdated design that didn't reflect their industry standing</li>
+      <li>Poor user experience and content organization</li>
+      <li>Lack of mobile-friendly design</li>
+      <li>Missing modern features like job portal and interactive elements</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mb-4 mt-8">Our Approach</h2>
+    <ul class="list-disc pl-5 mb-6 space-y-2">
+      <li>
+        Conducted meetings with the founder and stakeholders to understand
+        requirements
+      </li>
+      <li>
+        Performed thorough requirement analysis to identify design goals and
+        necessary features
+      </li>
+      <li>
+        Developed user-centric content organization for improved navigation
+      </li>
+      <li>Created and presented design demos for stakeholder feedback</li>
+      <li>Implemented iterative improvements based on client feedback</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mb-4 mt-8">Key Improvements</h2>
+    <ul class="list-disc pl-5 mb-6 space-y-2">
+      <li>Modern, professional design that reflects their industry standing</li>
+      <li>Fully responsive, cross-platform compatible layout</li>
+      <li>SEO optimization for better visibility</li>
+      <li>Integrated job portal for recruitment</li>
+      <li>Interactive elements to improve user engagement</li>
+      <li>Chatbot functionality for immediate customer support</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold mb-4 mt-8">Technologies Used</h2>
+    <ul class="list-disc pl-5 mb-6 space-y-2">
+      <li>Modern JavaScript framework</li>
+      <li>Responsive CSS framework</li>
+      <li>SEO optimization tools</li>
+      <li>Custom job portal integration</li>
+      <li>Interactive UI components</li>
+    </ul>
+  </div>
+</MainLayout>
