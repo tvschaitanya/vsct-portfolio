@@ -10,14 +10,14 @@ import PageHeading from "../ui/page-heading.astro"; // Reusing PageHeading compo
     description="Feel free to get in touch with me through any of the platforms below. I'm always happy to connect!"
   />
 
-  <!-- Contact Buttons -->
-  <div class="z-50 flex justify-center space-x-5 mt-8">
+  <!-- Contact Buttons - Now with responsive flex-wrap -->
+  <div class="z-50 flex flex-wrap justify-center gap-4 mt-8">
     <!-- Email Button -->
     <a
       href="mailto:tvschaitanya@outlook.com"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-neutral-700 hover:scale-105 hover:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-900 width-fit"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-neutral-700 hover:scale-105 hover:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-900"
     >
-      <Icon name="mdi:email" class="w-6 h-6" /> Email
+      <Icon name="mdi:email" class="w-5 h-5 sm:w-6 sm:h-6" /> Email
     </a>
 
     <!-- LinkedIn Button -->
@@ -25,9 +25,9 @@ import PageHeading from "../ui/page-heading.astro"; // Reusing PageHeading compo
       href="https://www.linkedin.com/in/tvschaitanya/"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-blue-500 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 width-fit"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-blue-500 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
-      <Icon name="mdi:linkedin" class="w-6 h-6" /> LinkedIn
+      <Icon name="mdi:linkedin" class="w-5 h-5 sm:w-6 sm:h-6" /> LinkedIn
     </a>
 
     <!-- GitHub Button -->
@@ -35,27 +35,19 @@ import PageHeading from "../ui/page-heading.astro"; // Reusing PageHeading compo
       href="https://github.com/tvschaitanya"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-gray-600 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-900 width-fit"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-gray-600 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
     >
-      <Icon name="mdi:github" class="w-6 h-6" /> GitHub
+      <Icon name="mdi:github" class="w-5 h-5 sm:w-6 sm:h-6" /> GitHub
     </a>
 
-    <!-- Hashnode Button with Animation and Hover Effects -->
+    <!-- Hashnode Button -->
     <a
       href="https://tvschaitanya.hashnode.dev/"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-[#2962FF] text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-[#1e4ab0] hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1e4ab0] width-fit"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-[#2962FF] text-white text-sm font-semibold rounded-full duration-300 ease-in-out transform hover:bg-[#1e4ab0] hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1e4ab0]"
     >
-      <Icon name="simple-icons:hashnode" class="w-6 h-6" /> Hashnode
+      <Icon name="simple-icons:hashnode" class="w-5 h-5 sm:w-6 sm:h-6" /> Hashnode
     </a>
   </div>
 </section>
-
-<style scoped>
-  /* Adding consistent padding to all links */
-  button,
-  a {
-    margin-right: -4px; /* Adjust as needed for spacing between icons and text inside the link/button if necessary. This helps in aligning them perfectly across different buttons with varying lengths of content.*/
-  }
-</style>
