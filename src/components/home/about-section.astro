@@ -2,42 +2,177 @@
 import experiences from "../../collections/experiences.json";
 import AboutExperience from "./about-experience.astro";
 import PageHeading from "../ui/page-heading.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<section
-  class="relative z-20 max-w-2xl mx-auto my-8 sm:my-12 px-4 sm:px-7 lg:px-0"
->
-  <PageHeading
-    title='About <span class="text-blue-500">Me</span>'
-    description="Hello, I'm Venkata Sai Chaitanya Tatikonda, a passionate Frontend Developer..."
-  />
-
-  <img
-    src="/assets/images/about.jpg"
-    class="relative z-30 w-full my-6 sm:my-10 rounded-xl shadow-md"
-    alt="Chaitanya Tatikonda"
-  />
-
-  <h2 class="mb-2 text-xl sm:text-2xl font-bold dark:text-neutral-200">
+<section class="relative z-20 max-w-2xl mx-auto my-12 px-4 sm:px-7 lg:px-0">
+  <PageHeading title='About <span class="text-blue-500">Me</span>' />
+  <div
+    class="relative z-30 w-[333px] h-[333px] my-10 rounded-full overflow-hidden shadow-md top-0 left-1/2 transform -translate-x-1/2"
+  >
+    <img src="/assets/images/me.jpg" class="object-cover w-full h-full" />
+  </div>
+  <h2 class="mb-2 text-2xl sm:text-3xl font-bold dark:text-neutral-200">
     Short Bio
   </h2>
   <p
-    class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+    class="text-base sm:text-lg leading-relaxed text-gray-600 dark:text-neutral-400"
   >
-    Passionate about front-end development 🧑🏻‍💻, exploring back-end technologies
-    🤷🏻‍♂️, and learning the ropes of GenAI.
+    Hi, I'm <strong>Venkata Sai Chaitanya Tatikonda</strong> — I specialize in creating
+    front-end experiences 🧑🏻‍💻 and am expanding my expertise to back-end development
+    and GenAI to build more comprehensive and dynamic solutions.
   </p>
 
+  <!-- Skills Logo Section -->
   <h2
-    class="mt-4 mb-2 text-xl sm:text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+    class="mt-6 sm:mt-8 mb-4 text-2xl sm:text-3xl font-bold dark:text-neutral-200"
+  >
+    My Skills
+  </h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 my-8">
+    <!-- Frontend Core -->
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#61DAFB]"
+      >
+        <Icon name="simple-icons:react" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        React
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#3178C6]"
+      >
+        <Icon name="simple-icons:typescript" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        TypeScript
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div class="w-16 h-16 flex items-center justify-center mb-2">
+        <Icon name="simple-icons:nextdotjs" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Next.js
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#06B6D4]"
+      >
+        <Icon name="simple-icons:tailwindcss" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Tailwind CSS
+      </p>
+    </div>
+
+    <!-- Frontend Tools -->
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#764ABC]"
+      >
+        <Icon name="simple-icons:redux" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Redux
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#F24E1E]"
+      >
+        <Icon name="simple-icons:figma" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Figma
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#CC6699]"
+      >
+        <Icon name="simple-icons:sass" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Sass
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#8DD6F9]"
+      >
+        <Icon name="simple-icons:webpack" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Webpack
+      </p>
+    </div>
+
+    <!-- Expanding Skills -->
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#339933]"
+      >
+        <Icon name="simple-icons:nodedotjs" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Node.js
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#E10098]"
+      >
+        <Icon name="simple-icons:graphql" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        GraphQL
+      </p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#FF9900]"
+      >
+        <Icon name="simple-icons:amazonaws" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">AWS</p>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#4285F4]"
+      >
+        <Icon name="simple-icons:googlecloud" class="w-12 h-12" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Google Cloud
+      </p>
+    </div>
+  </div>
+
+  <!-- Experience Section -->
+  <h2
+    class="mt-6 sm:mt-8 mb-2 text-2xl sm:text-3xl font-bold dark:text-neutral-200"
   >
     Experience
   </h2>
-  <div class="px-3 sm:px-5 py-6 sm:py-10">
+  <div class="px-5 py-10">
     {
       experiences.map((experience) => {
         return (
-          <div class="pb-8 sm:pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
+          <div class="pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
             <AboutExperience
               dates={experience.dates}
               role={experience.role}
