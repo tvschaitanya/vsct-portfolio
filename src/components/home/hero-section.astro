@@ -49,9 +49,8 @@ import Button from "../ui/button.astro";
           </span>
         </div>
         <div class="relative z-30 px-4 sm:px-10">
-          <!-- Desktop 3D model -->
           <div
-            class="relative z-30 w-full md:max-w-md mx-auto aspect-[790/1189] dark:-translate-y-0.5 hidden md:block"
+            class="relative z-30 w-full md:max-w-md mx-auto aspect-[790/1189] dark:-translate-y-0.5"
           >
             <script
               type="module"
@@ -60,20 +59,6 @@ import Button from "../ui/button.astro";
             <spline-viewer
               url="https://prod.spline.design/UXT8N3W3k8SBfN5q/scene.splinecode"
               class="w-full h-full"></spline-viewer>
-          </div>
-
-          <!-- Mobile-specific 3D model -->
-          <div
-            class="relative z-30 w-full md:max-w-md mx-auto aspect-[790/1189] dark:-translate-y-0.5 md:hidden"
-          >
-            <script
-              type="module"
-              src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"
-            ></script>
-            <spline-viewer
-              url="https://prod.spline.design/dxBxyU1Z-qo3eRB0/scene.splinecode"
-              class="w-full h-full"
-              loading-text="Loading 3D model..."></spline-viewer>
           </div>
         </div>
         <div
@@ -85,15 +70,3 @@ import Button from "../ui/button.astro";
     </div>
   </div>
 </div>
-
-<script>
-  // Detect mobile devices and apply any additional behaviors if needed
-  document.addEventListener("DOMContentLoaded", function () {
-    const isTouchDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
-
-    if (isTouchDevice) {
-      // Mobile-specific logic could be added here if needed
-    }
-  });
-</script>
