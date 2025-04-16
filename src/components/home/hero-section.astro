@@ -5,17 +5,17 @@ import Button from "../ui/button.astro";
 
 <div
   id="home"
-  class="relative z-20 w-full max-w-4xl mx-auto min-h-[85vh] flex items-center px-7 xl:px-0"
+  class="relative z-20 w-full max-w-4xl mx-auto min-h-[85vh] flex items-center px-4 sm:px-7 xl:px-0"
 >
   <div class="flex flex-col items-center md:flex-row">
     <div class="relative w-full md:w-1/2">
       <h1
-        class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white"
+        class="mb-5 text-3xl font-bold leading-tight sm:text-4xl lg:text-6xl dark:text-white"
       >
         Hello, I'm <span class="text-blue-500">Chaitanya</span>
       </h1>
 
-      <p class="mb-6 text-base text-neutral-600 dark:text-white">
+      <p class="mb-6 text-sm sm:text-base text-neutral-600 dark:text-white">
         A Full Stack Developer with over 4 years of experience, I specialize in
         building scalable and user-friendly web applications.
       </p>
@@ -23,7 +23,7 @@ import Button from "../ui/button.astro";
         Here's what I can bring to the table:
       </p>
       <ul
-        class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"
+        class="py-2 space-y-[3px] text-xs sm:text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"
       >
         <li>React.js Development</li>
         <li>Modern UI/UX Design</li>
@@ -33,14 +33,14 @@ import Button from "../ui/button.astro";
       </ul>
     </div>
     <div
-      class="relative w-full mt-10 flex justify-center md:justify-end md:pl-10 md:w-1/2 md:mt-0"
+      class="relative w-full mt-8 flex justify-center md:justify-end md:pl-6 lg:pl-10 md:w-1/2 md:mt-0"
     >
-      <div class="relative z-50 w-full">
+      <div class="relative z-50 w-full max-w-xs sm:max-w-sm md:max-w-none">
         <div
-          class="absolute bottom-0 z-40 w-16 h-16 -translate-x-6 -translate-y-1/2 lg:top-auto top-0 lg:-translate-y-[330px] rounded-full"
+          class="absolute bottom-0 z-40 w-12 h-12 sm:w-16 sm:h-16 -translate-x-6 -translate-y-1/2 lg:top-auto top-0 lg:-translate-y-[330px] rounded-full"
         >
           <span
-            class="relative z-20 flex items-center justify-center w-full h-full text-2xl border-8 border-white rounded-full dark:border-neutral-950 bg-neutral-100 dark:bg-neutral-900"
+            class="relative z-20 flex items-center justify-center w-full h-full text-xl sm:text-2xl border-6 sm:border-8 border-white rounded-full dark:border-neutral-950 bg-neutral-100 dark:bg-neutral-900"
           >
             <span
               class="flex items-center justify-center w-full h-full bg-white border-2 border-dashed rounded-full dark:bg-neutral-950 border-neutral-500 dark:border-neutral-500"
@@ -48,7 +48,7 @@ import Button from "../ui/button.astro";
             >
           </span>
         </div>
-        <div class="relative z-30 px-10">
+        <div class="relative z-30 px-4 sm:px-10">
           <div
             class="relative z-30 w-full md:max-w-md mx-auto aspect-[790/1189] dark:-translate-y-0.5"
           >

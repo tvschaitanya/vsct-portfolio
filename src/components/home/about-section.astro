@@ -4,7 +4,9 @@ import AboutExperience from "./about-experience.astro";
 import PageHeading from "../ui/page-heading.astro";
 ---
 
-<section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+<section
+  class="relative z-20 max-w-2xl mx-auto my-8 sm:my-12 px-4 sm:px-7 lg:px-0"
+>
   <PageHeading
     title='About <span class="text-blue-500">Me</span>'
     description="Hello, I'm Venkata Sai Chaitanya Tatikonda, a passionate Frontend Developer..."
@@ -12,10 +14,13 @@ import PageHeading from "../ui/page-heading.astro";
 
   <img
     src="/assets/images/about.jpg"
-    class="relative z-30 w-full my-10 rounded-xl"
+    class="relative z-30 w-full my-6 sm:my-10 rounded-xl shadow-md"
+    alt="Chaitanya Tatikonda"
   />
 
-  <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200">Short Bio</h2>
+  <h2 class="mb-2 text-xl sm:text-2xl font-bold dark:text-neutral-200">
+    Short Bio
+  </h2>
   <p
     class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
   >
@@ -24,15 +29,15 @@ import PageHeading from "../ui/page-heading.astro";
   </p>
 
   <h2
-    class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+    class="mt-4 mb-2 text-xl sm:text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
   >
     Experience
   </h2>
-  <div class="px-5 py-10">
+  <div class="px-3 sm:px-5 py-6 sm:py-10">
     {
       experiences.map((experience) => {
         return (
-          <div class="pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
+          <div class="pb-8 sm:pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
             <AboutExperience
               dates={experience.dates}
               role={experience.role}

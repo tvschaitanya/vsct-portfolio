@@ -1,6 +1,7 @@
 // Add your javascript here
 
-window.darkMode = false;
+// Set dark mode as default
+window.darkMode = true;
 
 const stickyClasses = ["fixed", "h-14"];
 const unstickyClasses = ["absolute", "h-20"];
@@ -17,12 +18,15 @@ let headerElement = null;
 document.addEventListener("DOMContentLoaded", () => {
 	headerElement = document.getElementById("header");
 
+	// Set dark mode as default unless user has explicitly chosen light mode
 	if (
-		localStorage.getItem("dark_mode") &&
+		localStorage.getItem("dark_mode") === null ||
 		localStorage.getItem("dark_mode") === "true"
 	) {
 		window.darkMode = true;
 		showNight();
+		// Ensure dark mode class is set
+		document.documentElement.classList.add("dark");
 	} else {
 		showDay();
 	}
@@ -62,10 +66,10 @@ document.getElementById("darkToggle").addEventListener("click", () => {
 	document.documentElement.classList.add("duration-300");
 
 	if (document.documentElement.classList.contains("dark")) {
-		localStorage.removeItem("dark_mode");
+		localStorage.setItem("dark_mode", "false");
 		showDay(true);
 	} else {
-		localStorage.setItem("dark_mode", true);
+		localStorage.setItem("dark_mode", "true");
 		showNight(true);
 	}
 });
