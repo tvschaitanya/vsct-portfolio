@@ -11,7 +11,7 @@ import SkillsSection from "../home/skills-section.astro"; // Reusing SkillsSecti
   <div
     class="relative z-30 w-[333px] h-[333px] my-10 rounded-full overflow-hidden shadow-md top-0 left-1/2 transform -translate-x-1/2"
   >
-    <img src="/assets/images/me.jpg" class="object-cover w-full h-full" />
+    <img src="/assets/images/me.jpeg" class="object-cover w-full h-full" />
   </div>
   <h2 class="mb-2 text-2xl sm:text-3xl font-bold dark:text-neutral-200">
     Short Bio
@@ -26,28 +26,4 @@ import SkillsSection from "../home/skills-section.astro"; // Reusing SkillsSecti
 
   <!-- Skills Logo Section -->
   <SkillsSection />
-
-  <!-- Experience Section -->
-  <h2
-    class="mt-6 sm:mt-8 mb-2 text-2xl sm:text-3xl font-bold dark:text-neutral-200"
-  >
-    Experience
-  </h2>
-  <div class="px-5 py-10">
-    {
-      experiences.map((experience) => {
-        return (
-          <div class="pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
-            <AboutExperience
-              dates={experience.dates}
-              role={experience.role}
-              company={experience.company}
-              description={experience.description}
-              logo={experience.logo}
-            />
-          </div>
-        );
-      })
-    }
-  </div>
 </section>

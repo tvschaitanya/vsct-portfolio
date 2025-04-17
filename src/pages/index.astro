@@ -6,6 +6,7 @@ import AboutSection from "../components/home/about-section.astro";
 import ProjectsSection from "../components/home/projects-section.astro";
 import ContactSection from "../components/home/contact-section.astro";
 import HeroSection from "../components/home/hero-section.astro";
+import ExperienceSection from "../components/home/experience-section.astro";
 ---
 
 <Layout title="Home">
@@ -24,7 +25,13 @@ import HeroSection from "../components/home/hero-section.astro";
     <ProjectsSection />
   </div>
 
-  <!-- Contacts Section - Fixed typo from "Conact" to "Contact" -->
+  <!-- Experience Section -->
+  <Separator text="Work Experience" />
+  <div id="experience" class="py-12">
+    <ExperienceSection />
+  </div>
+
+  <!-- Contact Section -->
   <Separator text="Contact Me" />
   <div id="contact" class="py-12">
     <ContactSection />
@@ -36,5 +43,12 @@ import HeroSection from "../components/home/hero-section.astro";
   [class*="border-dashed"] {
     border-style: dashed;
     border-width: 2px;
+  }
+
+  /* Fix for mobile overflow issue */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
   }
 </style>

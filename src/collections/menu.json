@@ -4,7 +4,7 @@
 	  "url": "#home"
 	},
 	{
-	  "name": "About",
+	  "name": "About Me",
 	  "url": "#about"
 	},
 	{
@@ -12,7 +12,11 @@
 	  "url": "#projects"
 	},
 	{
-		"name": "Contact Me",
-		"url": "#contact"
-	  }
-  ]
+	  "name": "Experience",
+	  "url": "#experience"
+	},
+	{
+	  "name": "Contact Me",
+	  "url": "#contact"
+	}
+]

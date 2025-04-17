@@ -1,0 +1,30 @@
+---
+import experiences from "../../collections/experiences.json";
+import AboutExperience from "./about-experience.astro";
+import PageHeading from "../ui/page-heading.astro";
+---
+
+<section
+  class="relative z-20 max-w-2xl mx-auto my-8 sm:my-12 px-4 sm:px-7 lg:px-0"
+>
+  <PageHeading
+    title="Work <span class='text-blue-500'>Experience</span>"
+    description="My professional journey and the roles that have shaped my career in web development. Each experience has contributed to my growth as a developer."
+  />
+
+  <div class="px-5 py-6 sm:py-8">
+    {
+      experiences.map((experience) => (
+        <div class="pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
+          <AboutExperience
+            dates={experience.dates}
+            role={experience.role}
+            company={experience.company}
+            description={experience.description}
+            logo={experience.logo}
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
