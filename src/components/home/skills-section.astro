@@ -1,0 +1,325 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeading from "../ui/page-heading.astro"; // Reusing PageHeading component for consistency
+---
+
+<section
+  class="relative z-20 max-w-2xl mx-auto my-8 sm:my-12 px-4 sm:px-7 lg:px-0"
+>
+  <h2
+    class="mt-6 sm:mt-8 mb-4 text-2xl sm:text-3xl font-bold dark:text-neutral-200"
+  >
+    Tech Stack
+  </h2>
+
+  <!-- Frontend Development Section -->
+  <div class="mb-8">
+    <h3 class="text-xl font-semibold mb-4 dark:text-neutral-300">
+      Frontend Expertise
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <!-- React -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#61DAFB]"
+        >
+          <Icon name="simple-icons:react" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          React.js
+        </p>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#F7DF1E]"
+        >
+          <Icon name="simple-icons:javascript" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          JavaScript (ES6+)
+        </p>
+      </div>
+
+      <!-- TypeScript -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#3178C6]"
+        >
+          <Icon name="simple-icons:typescript" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          TypeScript
+        </p>
+      </div>
+
+      <!-- Next.js -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-black dark:text-white"
+        >
+          <Icon name="simple-icons:nextdotjs" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Next.js
+        </p>
+      </div>
+
+      <!-- Tailwind -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#06B6D4]"
+        >
+          <Icon name="simple-icons:tailwindcss" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Tailwind CSS
+        </p>
+      </div>
+
+      <!-- Vue.js -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#4FC08D]"
+        >
+          <Icon name="simple-icons:vuedotjs" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Vue.js
+        </p>
+      </div>
+
+      <!-- HTML5/CSS3 Combined (Overlapping) -->
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 flex items-center justify-center mb-2 relative">
+          <Icon
+            name="simple-icons:html5"
+            class="w-10 h-10 text-[#E34F26] absolute -left-1"
+          />
+          <Icon
+            name="simple-icons:css3"
+            class="w-10 h-10 text-[#1572B6] absolute -right-1"
+          />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          HTML5 / CSS3
+        </p>
+      </div>
+
+      <!-- Astro.js -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#FF5D01] dark:text-[#FF5D01]"
+        >
+          <Icon name="simple-icons:astro" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Astro.js
+        </p>
+      </div>
+
+      <!-- Vite -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#646CFF]"
+        >
+          <Icon name="simple-icons:vite" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Vite
+        </p>
+      </div>
+
+      <!-- Figma -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#F24E1E]"
+        >
+          <Icon name="simple-icons:figma" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Figma
+        </p>
+      </div>
+
+      <!-- WordPress -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#21759B] dark:text-[#21759B]"
+        >
+          <Icon name="simple-icons:wordpress" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          WordPress
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backend Development Section -->
+  <div class="mb-8">
+    <h3 class="text-xl font-semibold mb-4 dark:text-neutral-300">
+      Backend Architecture
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <!-- Node.js + Express.js Combined -->
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 flex items-center justify-center mb-2 relative">
+          <Icon
+            name="simple-icons:nodedotjs"
+            class="w-10 h-10 text-[#339933] absolute -left-2"
+          />
+          <Icon
+            name="simple-icons:express"
+            class="w-10 h-10 text-[#000000] dark:text-[#FFFFFF] absolute -right-2"
+          />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Node.js / Express
+        </p>
+      </div>
+
+      <!-- Python -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#3776AB] dark:text-[#3776AB]"
+        >
+          <Icon name="simple-icons:python" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Python
+        </p>
+      </div>
+
+      <!-- MongoDB -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#47A248]"
+        >
+          <Icon name="simple-icons:mongodb" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          MongoDB
+        </p>
+      </div>
+
+      <!-- PostgreSQL -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#4169E1]"
+        >
+          <Icon name="simple-icons:postgresql" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          PostgreSQL
+        </p>
+      </div>
+
+      <!-- MySQL -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#4479A1]"
+        >
+          <Icon name="simple-icons:mysql" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          MySQL
+        </p>
+      </div>
+
+      <!-- Postman -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#FF6C37]"
+        >
+          <Icon name="simple-icons:postman" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Postman
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cloud & DevOps Section -->
+  <div class="mb-8">
+    <h3 class="text-xl font-semibold mb-4 dark:text-neutral-300">
+      Deployment & Infrastructure
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <!-- Docker -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#2496ED]"
+        >
+          <Icon name="simple-icons:docker" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Docker
+        </p>
+      </div>
+
+      <!-- Vercel -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-black dark:text-white"
+        >
+          <Icon name="simple-icons:vercel" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Vercel
+        </p>
+      </div>
+
+      <!-- AWS -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#FF9900]"
+        >
+          <Icon name="simple-icons:amazonaws" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          AWS
+        </p>
+      </div>
+
+      <!-- Git -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#F05032]"
+        >
+          <Icon name="simple-icons:git" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          Git
+        </p>
+      </div>
+
+      <!-- GitHub with Light/Dark Mode Support -->
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 flex items-center justify-center mb-2">
+          <Icon
+            name="simple-icons:github"
+            class="w-12 h-12 text-[#181717] dark:text-[#f0f6fc]"
+          />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          GitHub
+        </p>
+      </div>
+
+      <!-- CI/CD -->
+      <div class="flex flex-col items-center">
+        <div
+          class="w-16 h-16 flex items-center justify-center mb-2 text-[#2088FF]"
+        >
+          <Icon name="simple-icons:githubactions" class="w-12 h-12" />
+        </div>
+        <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+          CI/CD Pipelines
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
