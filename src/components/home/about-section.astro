@@ -6,22 +6,35 @@ import { Icon } from "astro-icon/components";
 import SkillsSection from "../home/skills-section.astro"; // Reusing SkillsSection component for consistency
 ---
 
-<section class="relative z-20 max-w-2xl mx-auto my-12 px-4 sm:px-7 lg:px-0">
+<section
+  class="relative z-20 max-w-2xl mx-auto my-8 sm:my-12 px-4 sm:px-7 lg:px-0"
+>
   <PageHeading title='About <span class="text-blue-500">Me</span>' />
+
+  <!-- Profile image - responsive sizing -->
   <div
-    class="relative z-30 w-[333px] h-[333px] my-10 rounded-full overflow-hidden shadow-md top-0 left-1/2 transform -translate-x-1/2"
+    class="relative z-30 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[333px] md:h-[333px] my-6 sm:my-10 rounded-full overflow-hidden shadow-md top-0 left-1/2 transform -translate-x-1/2"
   >
-    <img src="/assets/images/me.jpeg" class="object-cover w-full h-full" />
+    <img
+      src="/assets/images/me.jpeg"
+      alt="Venkata Sai Chaitanya Tatikonda"
+      class="object-cover w-full h-full"
+    />
   </div>
-  <h2 class="mb-2 text-2xl sm:text-3xl font-bold dark:text-neutral-200">
-    Short Bio
-  </h2>
+
   <p
-    class="text-base sm:text-lg leading-relaxed text-gray-600 dark:text-neutral-400"
+    class="text-sm sm:text-base md:text-lg leading-relaxed text-black dark:text-white"
   >
-    Hi, I'm <strong>Venkata Sai Chaitanya Tatikonda</strong> — I specialize in creating
-    front-end experiences 🧑🏻‍💻 and am expanding my expertise to back-end development
-    and GenAI to build more comprehensive and dynamic solutions.
+    Hi, I'm <strong>Venkata Sai Chaitanya Tatikonda</strong>.<br /><br />
+    I'm currently in my final semester of a Master's in Information Technology at
+    Florida State University, maintaining a 4.0 GPA.<br /><br />
+    I specialize in front-end development, focusing on clean, responsive, and user-friendly
+    interfaces that ensure a seamless user experience.<br /><br />
+    I also bring hands-on experience in back-end development and Generative AI, and
+    I'm actively building full-stack solutions that are both smart and scalable.<br
+    /><br />
+    Outside of tech, I enjoy photography, it's something I genuinely love and find
+    creatively fulfilling.
   </p>
 
   <!-- Skills Logo Section -->
