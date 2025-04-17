@@ -32,12 +32,31 @@ const { title } = Astro.props;
       .prose img {
         border-radius: 20px;
       }
+
+      /* Fix for mobile overflow */
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      /* Fix for horizontal scrolling */
+      body {
+        position: relative;
+      }
+
+      /* Make sure the background doesn't cause overflow */
+      [style*="z-index:-1"] {
+        width: 100vw !important;
+        left: 0;
+        right: 0;
+      }
     </style>
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
     <script src="../assets/css/main.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
-  <body class="antialiased bg-white dark:bg-neutral-950">
+  <body class="antialiased bg-white dark:bg-neutral-950 overflow-x-hidden">
     <SquareLines />
     <Header />
     <slot />
