@@ -1,7 +1,41 @@
 ---
-// Import any components needed inside the hero section
 import Button from "../ui/button.astro";
 ---
+
+<style>
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    15% {
+      transform: rotate(14deg);
+    }
+    30% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(14deg);
+    }
+    50% {
+      transform: rotate(-4deg);
+    }
+    60% {
+      transform: rotate(10deg);
+    }
+    70% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .animate-wave-once {
+    animation: wave 2s ease-in-out 0s 1 forwards;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+</style>
 
 <div
   id="home"
@@ -49,8 +83,10 @@ import Button from "../ui/button.astro";
           >
             <span
               class="flex items-center justify-center w-full h-full bg-white border-2 border-dashed rounded-full dark:bg-neutral-950 border-neutral-500 dark:border-neutral-500"
-              style="border-dash-width: 4px; border-dash-gap: 4px;">👋</span
+              style="border-dash-width: 4px; border-dash-gap: 4px;"
             >
+              <span class="animate-wave-once">👋</span>
+            </span>
           </span>
         </div>
         <div class="relative z-30 px-4 sm:px-10">

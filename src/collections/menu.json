@@ -4,7 +4,7 @@
 	  "url": "#home"
 	},
 	{
-	  "name": "About Me",
+	  "name": "About",
 	  "url": "#about"
 	},
 	{
@@ -16,7 +16,7 @@
 	  "url": "#experience"
 	},
 	{
-	  "name": "Contact Me",
+	  "name": "Contact",
 	  "url": "#contact"
 	}
 ]
