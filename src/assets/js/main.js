@@ -1,4 +1,4 @@
-// Add your javascript here
+// Add your JavaScript here
 
 // Set dark mode as default
 window.darkMode = true;
@@ -13,58 +13,119 @@ const stickyClassesContainer = [
 	"backdrop-blur-2xl",
 ];
 const unstickyClassesContainer = ["border-transparent"];
+
 let headerElement = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 	headerElement = document.getElementById("header");
 
+	// Add duration class once
+	document.documentElement.classList.add("duration-300");
+
 	// Set dark mode as default unless user has explicitly chosen light mode
-	if (
-		localStorage.getItem("dark_mode") === null ||
-		localStorage.getItem("dark_mode") === "true"
-	) {
+	const darkPref = localStorage.getItem("dark_mode");
+	if (darkPref === null || darkPref === "true") {
 		window.darkMode = true;
 		showNight();
-		// Ensure dark mode class is set
 		document.documentElement.classList.add("dark");
 	} else {
 		showDay();
 	}
-	stickyHeaderFuncionality();
+
+	stickyHeaderFunctionality();
 	applyMenuItemClasses();
 	evaluateHeaderPosition();
-	mobileMenuFunctionality();
+	setupMobileMenu();
 });
 
-window.stickyHeaderFuncionality = () => {
-	window.addEventListener("scroll", () => {
-		evaluateHeaderPosition();
-	});
+const stickyHeaderFunctionality = () => {
+	window.addEventListener("scroll", evaluateHeaderPosition);
 };
 
-window.evaluateHeaderPosition = () => {
+const evaluateHeaderPosition = () => {
+	const menu = document.getElementById("menu");
+	if (!headerElement || !menu) return;
+
 	if (window.scrollY > 16) {
 		headerElement.firstElementChild.classList.add(...stickyClassesContainer);
-		headerElement.firstElementChild.classList.remove(
-			...unstickyClassesContainer,
-		);
+		headerElement.firstElementChild.classList.remove(...unstickyClassesContainer);
 		headerElement.classList.add(...stickyClasses);
 		headerElement.classList.remove(...unstickyClasses);
-		document.getElementById("menu").classList.add("top-[56px]");
-		document.getElementById("menu").classList.remove("top-[75px]");
+		menu.classList.add("top-[56px]");
+		menu.classList.remove("top-[75px]");
 	} else {
 		headerElement.firstElementChild.classList.remove(...stickyClassesContainer);
 		headerElement.firstElementChild.classList.add(...unstickyClassesContainer);
 		headerElement.classList.add(...unstickyClasses);
 		headerElement.classList.remove(...stickyClasses);
-		document.getElementById("menu").classList.remove("top-[56px]");
-		document.getElementById("menu").classList.add("top-[75px]");
+		menu.classList.remove("top-[56px]");
+		menu.classList.add("top-[75px]");
 	}
 };
 
-document.getElementById("darkToggle").addEventListener("click", () => {
-	document.documentElement.classList.add("duration-300");
+const showDay = (animate) => {
+	const sun = document.getElementById("sun");
+	const moon = document.getElementById("moon");
+	const dayText = document.getElementById("dayText");
+	const nightText = document.getElementById("nightText");
 
+	if (!sun || !moon || !dayText || !nightText) return;
+
+	sun.classList.remove("setting");
+	moon.classList.remove("rising");
+
+	let timeout = 0;
+	if (animate) {
+		timeout = 500;
+		moon.classList.add("setting");
+	}
+
+	setTimeout(() => {
+		dayText.classList.remove("hidden");
+		nightText.classList.add("hidden");
+
+		moon.classList.add("hidden");
+		sun.classList.remove("hidden");
+
+		if (animate) {
+			document.documentElement.classList.remove("dark");
+			sun.classList.add("rising");
+		}
+	}, timeout);
+};
+
+const showNight = (animate) => {
+	const sun = document.getElementById("sun");
+	const moon = document.getElementById("moon");
+	const dayText = document.getElementById("dayText");
+	const nightText = document.getElementById("nightText");
+
+	if (!sun || !moon || !dayText || !nightText) return;
+
+	moon.classList.remove("setting");
+	sun.classList.remove("rising");
+
+	let timeout = 0;
+	if (animate) {
+		timeout = 500;
+		sun.classList.add("setting");
+	}
+
+	setTimeout(() => {
+		nightText.classList.remove("hidden");
+		dayText.classList.add("hidden");
+
+		sun.classList.add("hidden");
+		moon.classList.remove("hidden");
+
+		if (animate) {
+			document.documentElement.classList.add("dark");
+			moon.classList.add("rising");
+		}
+	}, timeout);
+};
+
+document.getElementById("darkToggle")?.addEventListener("click", () => {
 	if (document.documentElement.classList.contains("dark")) {
 		localStorage.setItem("dark_mode", "false");
 		showDay(true);
@@ -74,95 +135,61 @@ document.getElementById("darkToggle").addEventListener("click", () => {
 	}
 });
 
-function showDay(animate) {
-	document.getElementById("sun").classList.remove("setting");
-	document.getElementById("moon").classList.remove("rising");
-
-	let timeout = 0;
-
-	if (animate) {
-		timeout = 500;
-
-		document.getElementById("moon").classList.add("setting");
-	}
-
-	setTimeout(() => {
-		document.getElementById("dayText").classList.remove("hidden");
-		document.getElementById("nightText").classList.add("hidden");
-
-		document.getElementById("moon").classList.add("hidden");
-		document.getElementById("sun").classList.remove("hidden");
-
-		if (animate) {
-			document.documentElement.classList.remove("dark");
-			document.getElementById("sun").classList.add("rising");
-		}
-	}, timeout);
-}
-
-function showNight(animate) {
-	document.getElementById("moon").classList.remove("setting");
-	document.getElementById("sun").classList.remove("rising");
-
-	let timeout = 0;
-
-	if (animate) {
-		timeout = 500;
-
-		document.getElementById("sun").classList.add("setting");
-	}
-
-	setTimeout(() => {
-		document.getElementById("nightText").classList.remove("hidden");
-		document.getElementById("dayText").classList.add("hidden");
-
-		document.getElementById("sun").classList.add("hidden");
-		document.getElementById("moon").classList.remove("hidden");
-
-		if (animate) {
-			document.documentElement.classList.add("dark");
-			document.getElementById("moon").classList.add("rising");
-		}
-	}, timeout);
-}
-
-window.applyMenuItemClasses = () => {
+const applyMenuItemClasses = () => {
 	const menuItems = document.querySelectorAll("#menu a");
-	for (let i = 0; i < menuItems.length; i++) {
-		if (menuItems[i].pathname === window.location.pathname) {
-			menuItems[i].classList.add("text-neutral-900", "dark:text-white");
+	menuItems.forEach((item) => {
+		if (item.pathname === window.location.pathname) {
+			item.classList.add("text-neutral-900", "dark:text-white");
 		}
-	}
-	//:class="{ 'text-neutral-900 dark:text-white': window.location.pathname == '{menu.url}', 'text-neutral-700 dark:text-neutral-400': window.location.pathname != '{menu.url}' }"
+	});
 };
 
-function mobileMenuFunctionality() {
-	document.getElementById("openMenu").addEventListener("click", () => {
-		openMobileMenu();
+const setupMobileMenu = () => {
+	const openBtn = document.getElementById("openMenu");
+	const closeBtn = document.getElementById("closeMenu");
+	const menu = document.getElementById("menu");
+	const bg = document.getElementById("mobileMenuBackground");
+
+	openBtn?.addEventListener("click", openMobileMenu);
+	closeBtn?.addEventListener("click", closeMobileMenu);
+
+	// Close mobile menu on menu item click
+	const menuItems = document.querySelectorAll("#menu a");
+	menuItems.forEach((item) => {
+		item.addEventListener("click", closeMobileMenu);
 	});
+};
 
-	document.getElementById("closeMenu").addEventListener("click", () => {
-		closeMobileMenu();
-	});
-}
+const openMobileMenu = () => {
+	const openBtn = document.getElementById("openMenu");
+	const closeBtn = document.getElementById("closeMenu");
+	const menu = document.getElementById("menu");
+	const bg = document.getElementById("mobileMenuBackground");
 
-window.openMobileMenu = () => {
-	document.getElementById("openMenu").classList.add("hidden");
-	document.getElementById("closeMenu").classList.remove("hidden");
-	document.getElementById("menu").classList.remove("hidden");
-	document.getElementById("mobileMenuBackground").classList.add("opacity-0");
-	document.getElementById("mobileMenuBackground").classList.remove("hidden");
+	if (!openBtn || !closeBtn || !menu || !bg) return;
 
+	openBtn.classList.add("hidden");
+	closeBtn.classList.remove("hidden");
+	menu.classList.remove("hidden");
+	bg.classList.add("opacity-0");
+	bg.classList.remove("hidden");
+
+	// Slight delay to allow CSS transition
 	setTimeout(() => {
-		document
-			.getElementById("mobileMenuBackground")
-			.classList.remove("opacity-0");
+		bg.classList.remove("opacity-0");
 	}, 1);
 };
 
-window.closeMobileMenu = () => {
-	document.getElementById("closeMenu").classList.add("hidden");
-	document.getElementById("openMenu").classList.remove("hidden");
-	document.getElementById("menu").classList.add("hidden");
-	document.getElementById("mobileMenuBackground").classList.add("hidden");
+const closeMobileMenu = () => {
+	const openBtn = document.getElementById("openMenu");
+	const closeBtn = document.getElementById("closeMenu");
+	const menu = document.getElementById("menu");
+	const bg = document.getElementById("mobileMenuBackground");
+
+	if (!openBtn || !closeBtn || !menu || !bg) return;
+
+	closeBtn.classList.add("hidden");
+	openBtn.classList.remove("hidden");
+	menu.classList.add("hidden");
+	bg.classList.add("hidden");
 };

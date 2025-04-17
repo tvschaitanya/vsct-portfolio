@@ -1,55 +1,81 @@
 ---
 import { Icon } from "astro-icon/components";
-import PageHeading from "../ui/page-heading.astro"; // Reusing PageHeading component for consistency
+import PageHeading from "../ui/page-heading.astro";
 ---
 
 <section
   class="relative z-20 max-w-2xl mx-auto my-8 sm:my-12 px-4 sm:px-7 lg:px-0"
 >
-  <!-- Page Heading for Contact -->
   <PageHeading
     title='Contact <span class="text-blue-500">Me</span>'
     description="Feel free to reach out to me via email or connect on LinkedIn. You can also explore my projects on GitHub and read my blogs on Hashnode."
   />
 
-  <!-- Contact Buttons - Improved mobile responsiveness with better spacing -->
-  <div class="z-50 flex flex-wrap justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
-    <!-- Email Button -->
+  <div class="z-50 flex flex-wrap justify-center gap-6 mt-8">
+    <!-- Email -->
     <a
       href="mailto:tvschaitanya@outlook.com"
-      class="inline-flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-neutral-900 text-white text-sm sm:text-base font-semibold rounded-full duration-300 ease-in-out transform hover:bg-neutral-700 hover:scale-105 hover:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-900"
+      class="flex flex-col items-center group"
     >
-      <Icon name="mdi:email" class="w-5 h-5" /> Email
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-gray-800 dark:text-gray-200 group-hover:scale-110 transition"
+      >
+        <Icon name="mdi:email" class="w-12 h-12 text-current" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Email
+      </p>
     </a>
 
-    <!-- LinkedIn Button -->
+    <!-- LinkedIn -->
     <a
-      href="https://www.linkedin.com/in/tvschaitanya/"
+      href="https://www.linkedin.com/in/tvschaitanya"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-full duration-300 ease-in-out transform hover:bg-blue-500 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+      class="flex flex-col items-center group"
     >
-      <Icon name="mdi:linkedin" class="w-5 h-5" /> LinkedIn
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#2962FF] dark:text-[#2962FF] group-hover:scale-110 transition"
+      >
+        <Icon name="mdi:linkedin" class="w-12 h-12 text-current" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        LinkedIn
+      </p>
     </a>
 
-    <!-- GitHub Button -->
+    <!-- GitHub -->
     <a
       href="https://github.com/tvschaitanya"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gray-800 text-white text-sm sm:text-base font-semibold rounded-full duration-300 ease-in-out transform hover:bg-gray-600 hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-900"
+      class="flex flex-col items-center group"
     >
-      <Icon name="mdi:github" class="w-5 h-5" /> GitHub
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-gray-800 dark:text-gray-100 group-hover:scale-110 transition"
+      >
+        <Icon name="mdi:github" class="w-12 h-12 text-current" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        GitHub
+      </p>
     </a>
 
-    <!-- Hashnode Button -->
+    <!-- Hashnode -->
     <a
       href="https://tvschaitanya.hashnode.dev/"
       target="_blank"
       rel="noopener noreferrer"
-      class="inline-flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-[#2962FF] text-white text-sm sm:text-base font-semibold rounded-full duration-300 ease-in-out transform hover:bg-[#1e4ab0] hover:scale-105 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1e4ab0]"
+      class="flex flex-col items-center group"
     >
-      <Icon name="simple-icons:hashnode" class="w-5 h-5" /> Hashnode
+      <div
+        class="w-16 h-16 flex items-center justify-center mb-2 text-[#2962FF] dark:text-[#2962FF] group-hover:scale-110 transition"
+      >
+        <Icon name="simple-icons:hashnode" class="w-12 h-12 text-current" />
+      </div>
+      <p class="text-sm text-center text-gray-700 dark:text-neutral-300">
+        Hashnode
+      </p>
     </a>
   </div>
 </section>
