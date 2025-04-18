@@ -15,31 +15,25 @@
 	  "name": "Epic Questers",
 	  "description": "App Design to find the recreatinoal activities",
 	  "image": "/assets/images/projects/epic-questers.png",
-	  "url": "/projects/epic-questers"
+	  "url": "https://www.figma.com/design/9SuZn91nBolIgs7v5IFVc1/Epic-Questers---Read-Only?node-id=0-1&t=hH5J2w723lloeiyd-1"
 	},
 	{
-		"name": "ToDo App (MERN Stack)",
+		"name": "ToDo App",
 		"description": "A full-stack minimalist ToDo app built with the MERN stack, showcasing backend integration and a clean UI.",
 		"image": "https://raw.githubusercontent.com/tvschaitanya/Minimalist-Todo-App/main/Screenshot%20-%20Login%20Page.jpeg",
 		"url": "https://github.com/tvschaitanya/Minimalist-Todo-App"
-	  },	  
-	{
-	  "name": "E-Commerce UX Redesign",
-	  "description": "Real-world usability improvements.",
-	  "image": "/assets/images/projects/ecommerce-ux-redesign.png",
-	  "url": "/projects/ecommerce-ux-redesign"
-	},
-	{
-	  "name": "Pramanik Yoga",
-	  "description": "Yoga website project focused on user engagement and ease of navigation.",
-	  "image": "/assets/images/projects/pramanik-yoga.png",
-	  "url": "/projects/pramanik-yoga"
-	},
+	  },
+	  {
+		"name": "Vishnu Wellness",
+		"description": "A full-stack minimalist ToDo app built with the MERN stack, showcasing backend integration and a clean UI.",
+		"image": "/assets/images/projects/vishnuwellness.png",
+		"url": "https://vishnuwellness.in/"
+	  },		  
 	{
 	  "name": "MLRIT MUN",
 	  "description": "Model United Nations website for MLR Institute of Technology.",
-	  "image": "/assets/images/projects/mlrit-mun.png",
-	  "url": "/projects/mlrit-mun"
+	  "image": "/assets/images/projects/mlrit-mun.jpeg",
+	  "url": "https://tvschaitanya.github.io/mlritmun.com/"
 	}
   ]
   
