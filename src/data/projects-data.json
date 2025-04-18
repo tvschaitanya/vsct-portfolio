@@ -1,20 +1,45 @@
 [
 	{
-		"name": "KDM Engineers Website",
-		"description": "Website for KDM Engineers.",
-		"image": "/assets/images/projects/kdm-after.png",
-		"url": "/projects/kdm"
+	  "name": "ColorSense",
+	  "description": "AI-powered tool that transforms text color descriptions into visual colors.",
+	  "image": "/assets/images/projects/colorsense-1.png",
+	  "url": "/projects/colorsense"
 	},
 	{
-		"name": "DNS.Surf",
-		"description": "Querying DNS Resolution Results in Different Regions Worldwide.",
-		"image": "/assets/images/projects/dns.surf.png",
-		"url": "/projects/dns-surf"
+	  "name": "KDM Engineers Website",
+	  "description": "Redesign of KDM Engineers",
+	  "image": "/assets/images/projects/kdm-after.png",
+	  "url": "/projects/kdm"
 	},
 	{
-		"name": "HTML.ZONE",
-		"description": "Web Toolbox.",
-		"image": "/assets/images/projects/html.zone.png",
-		"url": "/projects/html-zone"
+	  "name": "Epic Questers",
+	  "description": "App Design to find the recreatinoal activities",
+	  "image": "/assets/images/projects/epic-questers.png",
+	  "url": "/projects/epic-questers"
+	},
+	{
+		"name": "ToDo App (MERN Stack)",
+		"description": "A full-stack minimalist ToDo app built with the MERN stack, showcasing backend integration and a clean UI.",
+		"image": "https://raw.githubusercontent.com/tvschaitanya/Minimalist-Todo-App/main/Screenshot%20-%20Login%20Page.jpeg",
+		"url": "https://github.com/tvschaitanya/Minimalist-Todo-App"
+	  },	  
+	{
+	  "name": "E-Commerce UX Redesign",
+	  "description": "Real-world usability improvements.",
+	  "image": "/assets/images/projects/ecommerce-ux-redesign.png",
+	  "url": "/projects/ecommerce-ux-redesign"
+	},
+	{
+	  "name": "Pramanik Yoga",
+	  "description": "Yoga website project focused on user engagement and ease of navigation.",
+	  "image": "/assets/images/projects/pramanik-yoga.png",
+	  "url": "/projects/pramanik-yoga"
+	},
+	{
+	  "name": "MLRIT MUN",
+	  "description": "Model United Nations website for MLR Institute of Technology.",
+	  "image": "/assets/images/projects/mlrit-mun.png",
+	  "url": "/projects/mlrit-mun"
 	}
-]
+  ]
+  

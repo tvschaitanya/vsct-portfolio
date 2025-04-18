@@ -17,7 +17,7 @@ import PageHeading from "../ui/page-heading.astro";
     class="z-50 grid items-stretch w-full grid-cols-1 my-6 sm:my-8 gap-5 sm:gap-7 sm:grid-cols-2"
   >
     {
-      projects.map((project) => {
+      projects.slice(0, 4).map((project) => {
         return (
           <Project
             name={project.name}
