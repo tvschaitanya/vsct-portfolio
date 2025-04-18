@@ -2,7 +2,8 @@
 import Footer from "../components/ui/footer.astro";
 import Header from "../components/ui/header.astro";
 import SquareLines from "../components/ui/square-lines.astro";
-import ProjectModal from "../components/ui/ProjectModal";
+
+// Ensure title is passed as a prop
 const { title } = Astro.props;
 ---
 
@@ -13,10 +14,9 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
 
-    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <!-- Dark Mode Setup -->
     <script is:inline>
       if (typeof Storage !== "undefined") {
-        // Set dark mode as default unless explicitly set to false
         if (
           localStorage.getItem("dark_mode") === null ||
           localStorage.getItem("dark_mode") == "true"
@@ -33,36 +33,39 @@ const { title } = Astro.props;
         border-radius: 20px;
       }
 
-      /* Fix for mobile overflow */
+      /* Mobile Overflow Fix */
       html,
       body {
         overflow-x: hidden;
         width: 100%;
       }
 
-      /* Fix for horizontal scrolling */
+      /* Horizontal Scrolling Fix */
       body {
         position: relative;
       }
 
-      /* Make sure the background doesn't cause overflow */
+      /* Background Overflow Fix */
       [style*="z-index:-1"] {
         width: 100vw !important;
         left: 0;
         right: 0;
       }
     </style>
+
+    <!-- Favicon and External Stylesheet -->
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
     <script src="../assets/css/main.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
+
   <body class="antialiased bg-white dark:bg-neutral-950 overflow-x-hidden">
     <SquareLines />
     <Header />
     <slot />
     <Footer />
-    <!-- Add the modal component -->
-    <ProjectModal client:load />
+
+    <!-- External JS -->
     <script src="../assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
