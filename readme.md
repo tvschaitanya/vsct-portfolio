@@ -1,35 +1,43 @@
-# My Portfolio – Built with Astro & Aria Theme
+# ✨ vsct-portfolio
 
-This is my personal portfolio website, built using the [Aria Theme](https://astro.build/themes/details/aria/) for [Astro](https://astro.build/).
-
-The purpose of this site is to showcase my projects, skills, and experiences in a clean and professional way — and to have a space that reflects who I am as a developer.
+A clean and modern personal portfolio site to showcase my work, skills, and experiences. Built with Astro and styled using Tailwind CSS, this project focuses on simplicity, speed, and responsiveness.
 
 ---
 
-## 🚀 Why this project
+## 🔍 Overview
 
-- To create a simple and modern personal website
-- To share my work and background
-- To explore and learn Astro, Tailwind, and other tools
-- Based on the Aria theme, with my own customizations
+This site includes:
 
----
-
-## 🛠 Tech Stack
-
-- [Astro](https://astro.build/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Bun](https://bun.sh/) – for running the project
-- [Biome](https://biomejs.dev/) – code formatting & linting
+- Hero section with intro
+- Skills and experience timelines
+- Projects with image comparisons
+- Contact section with social links
+- Fully responsive layout and dark mode
 
 ---
 
-## 🙋‍♂️ Credits
+## ⚙️ Tech Stack
 
-- Theme: [Aria by Astro](https://astro.build/themes/details/aria/)
-- Customized and maintained by me for my personal use
+- **Astro** – Static site generator
+- **Tailwind CSS** – Utility-first CSS framework
+- **React** – For interactive UI components
+- **TypeScript** – For type safety
+- **Biome** – Code formatting and linting
 
 ---
 
-Thanks for checking it out!
+## 🧩 Key Packages
+
+- `astro-icon` for icon support
+- `react-compare-slider` for project image comparisons
+- `@astrojs/react` for React integration
+- `@astrojs/tailwind` for seamless Tailwind setup
+
+---
+
+## 📁 Structure
+
+- `src/components/home/` – Homepage sections
+- `src/components/ui/` – Reusable UI components
+- `src/data/` – JSON files for dynamic content
+- `src/pages/` – Static pages (`index`, `projects`, etc.)
