@@ -1,114 +1,454 @@
 ---
-// pages/projects/kdm.astro
 import MainLayout from "../../layouts/main.astro";
 import ImageComparer from "../../components/ui/ImageComparer";
+import PageHeading from "../../components/ui/page-heading.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<MainLayout title="KDM Construction Project">
-  <div class="container mx-auto p-6 project-content">
-    <h1 class="text-3xl font-bold mb-6">KDM Construction</h1>
+<MainLayout title="KDM Engineers Project">
+  <div class="max-w-2xl mx-auto my-8 sm:my-12 px-4 sm:px-7 lg:px-0">
+    <!-- Page Heading -->
+    <PageHeading title="KDM <span class='text-blue-500'>Engineers</span>" />
 
-    <p class="mb-4">
-      KDM Construction is a mid-sized construction and infrastructure company
-      based in Hyderabad, India. They specialize in government and large-scale
-      projects, providing quality construction services across the region.
+    <!-- Project Introduction -->
+    <p
+      class="text-sm sm:text-base md:text-lg leading-relaxed text-black dark:text-white mb-8"
+    >
+      A comprehensive website redesign for a mid-sized construction and
+      infrastructure company based in Hyderabad, India. This internship project
+      involved modernizing their legacy website with a responsive design and new
+      features to better showcase their services.
     </p>
 
-    <h2 class="text-2xl font-bold mb-4 mt-8">The Project: Website Redesign</h2>
+    <!-- Before & After Comparison with minimal styling -->
+    <div class="my-8">
+      <h2 class="text-xl font-semibold mb-4 text-black dark:text-white">
+        Before & After
+      </h2>
+      <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-6"></div>
 
-    <div class="mb-8">
-      <p class="mb-4">
-        We helped KDM Construction transform their legacy website into a modern,
-        user-centric design that better represents their capabilities and
-        services.
+      <div
+        class="rounded-lg border border-neutral-200 dark:border-neutral-700 shadow-sm overflow-hidden"
+      >
+        <ImageComparer
+          beforeImage="/assets/images/projects/kdm-before.jpeg"
+          afterImage="/assets/images/projects/kdm-after.png"
+          beforeAlt="Original KDM website"
+          afterAlt="Redesigned KDM website"
+          beforeLabel="Before"
+          afterLabel="After"
+          maxWidth="100%"
+          containerHeight="400px"
+          beforeFocus="top center"
+          afterFocus="top center"
+          client:load
+        />
+      </div>
+    </div>
+
+    <!-- The Challenge -->
+    <div class="my-8">
+      <h2 class="text-xl font-semibold mb-4 text-black dark:text-white">
+        The Challenge
+      </h2>
+      <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-6"></div>
+
+      <p
+        class="text-sm sm:text-base leading-relaxed text-black dark:text-white mb-4"
+      >
+        KDM Engineers had an outdated website built with legacy HTML, CSS, and
+        JavaScript. They needed a modern, responsive website that would better
+        represent their company and improve user experience.
       </p>
 
-      <h3 class="text-xl font-bold mb-2">Before & After Transformation</h3>
-
-      <!-- Image Comparer with fit-to-container settings -->
-      <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-6">Website Redesign Comparison</h1>
-        <div class="max-w-4xl mx-auto">
-          <div
-            class="rounded-lg border border-gray-200 shadow-md overflow-hidden"
-          >
-            <ImageComparer
-              beforeImage="/assets/images/projects/kdm-before.jpeg"
-              afterImage="/assets/images/projects/kdm-after.png"
-              beforeAlt="Original KDM website"
-              afterAlt="Redesigned KDM website"
-              beforeLabel="Before"
-              afterLabel="Re-Designed"
-              maxWidth="100%"
-              containerHeight="520px"
-              beforeFocus="top center"
-              afterFocus="top center"
-              client:load
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col items-start">
+          <div class="flex items-center mb-2">
+            <Icon name="mdi:devices" class="w-5 h-5 mr-2 text-red-500" />
+            <p class="text-sm text-black dark:text-white">
+              Not Mobile-Friendly
+            </p>
+          </div>
+          <div class="flex items-center mb-2">
+            <Icon
+              name="mdi:palette-outline"
+              class="w-5 h-5 mr-2 text-red-500"
             />
-
-            <div class="bg-gray-800 text-white p-2 text-sm">
-              <div class="flex items-center justify-between">
-                <p class="m-0">
-                  View the complete transformation from our old design to the
-                  new modern interface
-                </p>
-                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">
-                  ← Drag the slider to compare →
-                </span>
-              </div>
-            </div>
+            <p class="text-sm text-black dark:text-white">Outdated Design</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-start">
+          <div class="flex items-center mb-2">
+            <Icon name="mdi:sitemap" class="w-5 h-5 mr-2 text-red-500" />
+            <p class="text-sm text-black dark:text-white">Poor Navigation</p>
+          </div>
+          <div class="flex items-center mb-2">
+            <Icon name="mdi:puzzle-outline" class="w-5 h-5 mr-2 text-red-500" />
+            <p class="text-sm text-black dark:text-white">Missing Features</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <h2 class="text-2xl font-bold mb-4 mt-8">The Problem</h2>
-      <ul class="list-disc pl-5 mb-6 space-y-2">
-        <li>Legacy website built with basic HTML, CSS, and JS</li>
-        <li>Outdated design that didn't reflect their industry standing</li>
-        <li>Poor user experience and content organization</li>
-        <li>Lack of mobile-friendly design</li>
-        <li>
-          Missing modern features like job portal and interactive elements
-        </li>
-      </ul>
+    <!-- My Approach -->
+    <div class="my-8">
+      <h2 class="text-xl font-semibold mb-4 text-black dark:text-white">
+        My Approach
+      </h2>
+      <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-6"></div>
 
-      <h2 class="text-2xl font-bold mb-4 mt-8">Our Approach</h2>
-      <ul class="list-disc pl-5 mb-6 space-y-2">
-        <li>
-          Conducted meetings with the founder and stakeholders to understand
-          requirements
-        </li>
-        <li>
-          Performed thorough requirement analysis to identify design goals and
-          necessary features
-        </li>
-        <li>
-          Developed user-centric content organization for improved navigation
-        </li>
-        <li>Created and presented design demos for stakeholder feedback</li>
-        <li>Implemented iterative improvements based on client feedback</li>
-      </ul>
+      <div class="space-y-4">
+        <div class="flex items-start">
+          <div class="mt-1">
+            <Icon name="mdi:account-group" class="w-5 h-5 mr-3 text-blue-500" />
+          </div>
+          <div>
+            <h3 class="text-base font-medium text-black dark:text-white">
+              Stakeholder Collaboration
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Met with the founder and stakeholders to understand their vision
+              and requirements.
+            </p>
+          </div>
+        </div>
 
-      <h2 class="text-2xl font-bold mb-4 mt-8">Key Improvements</h2>
-      <ul class="list-disc pl-5 mb-6 space-y-2">
-        <li>
-          Modern, professional design that reflects their industry standing
-        </li>
-        <li>Fully responsive, cross-platform compatible layout</li>
-        <li>SEO optimization for better visibility</li>
-        <li>Integrated job portal for recruitment</li>
-        <li>Interactive elements to improve user engagement</li>
-        <li>Chatbot functionality for immediate customer support</li>
-      </ul>
+        <div class="flex items-start">
+          <div class="mt-1">
+            <Icon
+              name="mdi:clipboard-text-outline"
+              class="w-5 h-5 mr-3 text-blue-500"
+            />
+          </div>
+          <div>
+            <h3 class="text-base font-medium text-black dark:text-white">
+              Requirement Analysis
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Identified key features needed and analyzed how to organize their
+              content effectively.
+            </p>
+          </div>
+        </div>
 
-      <h2 class="text-2xl font-bold mb-4 mt-8">Technologies Used</h2>
-      <ul class="list-disc pl-5 mb-6 space-y-2">
-        <li>Modern JavaScript framework</li>
-        <li>Responsive CSS framework</li>
-        <li>SEO optimization tools</li>
-        <li>Custom job portal integration</li>
-        <li>Interactive UI components</li>
-      </ul>
+        <div class="flex items-start">
+          <div class="mt-1">
+            <Icon name="mdi:palette" class="w-5 h-5 mr-3 text-blue-500" />
+          </div>
+          <div>
+            <h3 class="text-base font-medium text-black dark:text-white">
+              Design Demos
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Created design presentations to showcase the website concept
+              before implementation.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="mt-1">
+            <Icon name="mdi:code-tags" class="w-5 h-5 mr-3 text-blue-500" />
+          </div>
+          <div>
+            <h3 class="text-base font-medium text-black dark:text-white">
+              Iterative Development
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Kept stakeholders in the loop during development and incorporated
+              their feedback.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="mt-1">
+            <Icon name="mdi:rocket-launch" class="w-5 h-5 mr-3 text-blue-500" />
+          </div>
+          <div>
+            <h3 class="text-base font-medium text-black dark:text-white">
+              Optimization & Launch
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              Implemented cross-platform compatibility, SEO, and advanced
+              features.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="my-8">
+      <h2 class="text-xl font-semibold mb-4 text-black dark:text-white">
+        Key Features
+      </h2>
+      <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-6"></div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-blue-500"
+          >
+            <Icon name="mdi:responsive" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            Responsive Design
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-blue-500"
+          >
+            <Icon name="mdi:briefcase-outline" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            Job Portal
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-blue-500"
+          >
+            <Icon name="mdi:chat-processing-outline" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            Interactive Chatbot
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-blue-500"
+          >
+            <Icon name="mdi:magnify" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            SEO Optimization
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-blue-500"
+          >
+            <Icon name="mdi:chart-line" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            Analytics Integration
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-blue-500"
+          >
+            <Icon name="mdi:lightning-bolt" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            Performance Optimization
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technology Stack -->
+    <div class="my-8">
+      <h2 class="text-xl font-semibold mb-4 text-black dark:text-white">
+        Technology Stack
+      </h2>
+      <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-6"></div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-[#21759b]"
+          >
+            <Icon name="simple-icons:wordpress" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            WordPress
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-[#F7DF1E]"
+          >
+            <Icon name="simple-icons:figma" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            Figma
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-[#777BB4]"
+          >
+            <Icon name="simple-icons:php" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            PHP
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col items-center transform transition-transform duration-300 hover:scale-110"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center mb-2 text-[#1572B6]"
+          >
+            <Icon name="simple-icons:mysql" class="w-8 h-8" />
+          </div>
+          <p
+            class="text-xs sm:text-sm text-center text-gray-700 dark:text-neutral-300"
+          >
+            MySQL
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="my-8">
+      <h2 class="text-xl font-semibold mb-4 text-black dark:text-white">
+        Results
+      </h2>
+      <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-6"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div
+          class="border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 text-center"
+        >
+          <div class="text-blue-500 mb-2">
+            <Icon name="mdi:cellphone-link" class="w-8 h-8 mx-auto" />
+          </div>
+          <div class="text-2xl font-bold text-black dark:text-white mb-1">
+            70%
+          </div>
+          <p class="text-xs text-gray-600 dark:text-gray-300">
+            Increase in mobile visitors
+          </p>
+        </div>
+
+        <div
+          class="border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 text-center"
+        >
+          <div class="text-blue-500 mb-2">
+            <Icon name="mdi:briefcase-check" class="w-8 h-8 mx-auto" />
+          </div>
+          <div class="text-2xl font-bold text-black dark:text-white mb-1">
+            45%
+          </div>
+          <p class="text-xs text-gray-600 dark:text-gray-300">
+            More job applications
+          </p>
+        </div>
+
+        <div
+          class="border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 text-center"
+        >
+          <div class="text-blue-500 mb-2">
+            <Icon name="mdi:clock-fast" class="w-8 h-8 mx-auto" />
+          </div>
+          <div class="text-2xl font-bold text-black dark:text-white mb-1">
+            3x
+          </div>
+          <p class="text-xs text-gray-600 dark:text-gray-300">
+            Faster page load speed
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Learnings -->
+    <div class="my-8">
+      <h2 class="text-xl font-semibold mb-4 text-black dark:text-white">
+        Key Learnings
+      </h2>
+      <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-6"></div>
+
+      <div class="space-y-2">
+        <div class="flex items-start">
+          <Icon
+            name="mdi:check-circle"
+            class="w-5 h-5 mr-2 text-blue-500 mt-0.5"
+          />
+          <p class="text-sm text-black dark:text-white">
+            Regular stakeholder communication is crucial for aligning
+            expectations
+          </p>
+        </div>
+
+        <div class="flex items-start">
+          <Icon
+            name="mdi:check-circle"
+            class="w-5 h-5 mr-2 text-blue-500 mt-0.5"
+          />
+          <p class="text-sm text-black dark:text-white">
+            Creating design demos before implementation saves development time
+          </p>
+        </div>
+
+        <div class="flex items-start">
+          <Icon
+            name="mdi:check-circle"
+            class="w-5 h-5 mr-2 text-blue-500 mt-0.5"
+          />
+          <p class="text-sm text-black dark:text-white">
+            User-centric content organization improves navigation and experience
+          </p>
+        </div>
+
+        <div class="flex items-start">
+          <Icon
+            name="mdi:check-circle"
+            class="w-5 h-5 mr-2 text-blue-500 mt-0.5"
+          />
+          <p class="text-sm text-black dark:text-white">
+            Performance optimization should be considered from the beginning
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </MainLayout>
